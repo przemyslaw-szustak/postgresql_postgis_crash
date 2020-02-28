@@ -68,14 +68,14 @@
     ```
         No LSB modules are available.
         Distributor ID:	Ubuntu
-        Description:	Ubuntu 18.04.4 LTS
-        Release:	18.04
-        Codename:	bionic
+        Description:	Ubuntu 16.04.6 LTS
+        Release:	16.04
+        Codename:	xenial
     ```
 
 - ``` uname -a ``` return: 
     ```
-        Linux pszemek-lenovo 5.3.0-40-generic #32~18.04.1-Ubuntu SMP Mon Feb 3 14:05:59 UTC 2020 x86_64 x86_64 x86_64 GNU/Linux
+        Linux 4.4.0-165-generic #193-Ubuntu SMP Tue Sep 17 17:42:52 UTC 2019 x86_64 x86_64 x86_64 GNU/Linux
     ```
 
 
