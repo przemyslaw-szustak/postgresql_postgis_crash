@@ -349,8 +349,9 @@ Results:
 
 
 
-~~I don't know how to restore errors below but on other db I had system crash file. ~~
+~I don't know how to restore errors below but on other db I had system crash file.~
 _Abowe is CoreDump from this example - now system was generate this file_
+
 Belowe some info aobut that.
 * cd ~/; mkdir ./crash/err -p; cd ./crash; mv /var/crash/_usr_lib_postgresql_10_bin_postgres.111.crash ~/crash 
 * apport-unpack _usr_lib_postgresql_10_bin_postgres.111.crash ./err; cd ./err
@@ -456,5 +457,3 @@ Belowe some info aobut that.
     #20 0x000055fb8fd56c75 in main ()
     No symbol table info available.
     ```
-
-
