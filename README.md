@@ -266,6 +266,110 @@ Results:
         #29 0x000055b80ce12c75 in main (argc=5, argv=0x55b80ed5a850) at /build/postgresql-10-0Kn02a/postgresql-10-10.12/build/../src/backend/main/main.c:228
 
         ```
+    - using gdb -p (when I press c then I have text Continuing for long time next I press bt and I don't have response - like be frozen - I can only write text and nothing happening, htop show 0CPU used, I was waiting few minutes)
+        ```
+            ./err# gdb -p 27547
+            GNU gdb (Ubuntu 7.11.1-0ubuntu1~16.5) 7.11.1
+            Copyright (C) 2016 Free Software Foundation, Inc.
+            License GPLv3+: GNU GPL version 3 or later <http://gnu.org/licenses/gpl.html>
+            This is free software: you are free to change and redistribute it.
+            There is NO WARRANTY, to the extent permitted by law.  Type "show copying"
+            and "show warranty" for details.
+            This GDB was configured as "x86_64-linux-gnu".
+            Type "show configuration" for configuration details.
+            For bug reporting instructions, please see:
+            <http://www.gnu.org/software/gdb/bugs/>.
+            Find the GDB manual and other documentation resources online at:<http://www.gnu.org/software/gdb/documentation/>.
+            For help, type "help".
+            Type "apropos word" to search for commands related to "word".
+            Attaching to process 27547
+            Reading symbols from /usr/lib/postgresql/10/bin/postgres...Reading symbols from /usr/lib/debug/.build-id/be/2d0e659760671fda0395f73e15ef668c2c4235.debug...done.
+            done.
+            Reading symbols from /lib/x86_64-linux-gnu/libpthread.so.0...Reading symbols from /usr/lib/debug/.build-id/b1/7c21299099640a6d863e423d99265824e7bb16.debug...done.
+            done.
+            [Thread debugging using libthread_db enabled]
+            Using host libthread_db library "/lib/x86_64-linux-gnu/libthread_db.so.1".
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libxml2.so.2...(no debugging symbols found)...done.
+            Reading symbols from /lib/x86_64-linux-gnu/libpam.so.0...(no debugging symbols found)...done.
+            Reading symbols from /lib/x86_64-linux-gnu/libssl.so.1.0.0...(no debugging symbols found)...done.
+            Reading symbols from /lib/x86_64-linux-gnu/libcrypto.so.1.0.0...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libgssapi_krb5.so.2...(no debugging symbols found)...done.
+            Reading symbols from /lib/x86_64-linux-gnu/librt.so.1...Reading symbols from /usr/lib/debug//lib/x86_64-linux-gnu/librt-2.23.so...done.
+            done.
+            Reading symbols from /lib/x86_64-linux-gnu/libdl.so.2...Reading symbols from /usr/lib/debug//lib/x86_64-linux-gnu/libdl-2.23.so...done.
+            done.
+            Reading symbols from /lib/x86_64-linux-gnu/libm.so.6...Reading symbols from /usr/lib/debug//lib/x86_64-linux-gnu/libm-2.23.so...done.
+            done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libldap_r-2.4.so.2...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libicui18n.so.55...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libicuuc.so.55...(no debugging symbols found)...done.
+            Reading symbols from /lib/x86_64-linux-gnu/libsystemd.so.0...(no debugging symbols found)...done.
+            Reading symbols from /lib/x86_64-linux-gnu/libc.so.6...Reading symbols from /usr/lib/debug//lib/x86_64-linux-gnu/libc-2.23.so...done.
+            done.
+            Reading symbols from /lib64/ld-linux-x86-64.so.2...Reading symbols from /usr/lib/debug//lib/x86_64-linux-gnu/ld-2.23.so...done.
+            done.
+            Reading symbols from /lib/x86_64-linux-gnu/libz.so.1...(no debugging symbols found)...done.
+            Reading symbols from /lib/x86_64-linux-gnu/liblzma.so.5...(no debugging symbols found)...done.
+            Reading symbols from /lib/x86_64-linux-gnu/libaudit.so.1...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libkrb5.so.3...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libk5crypto.so.3...(no debugging symbols found)...done.
+            Reading symbols from /lib/x86_64-linux-gnu/libcom_err.so.2...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libkrb5support.so.0...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/liblber-2.4.so.2...(no debugging symbols found)...done.
+            Reading symbols from /lib/x86_64-linux-gnu/libresolv.so.2...Reading symbols from /usr/lib/debug//lib/x86_64-linux-gnu/libresolv-2.23.so...done.
+            done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libsasl2.so.2...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libgssapi.so.3...(no debugging symbols found)...done.Reading symbols from /usr/lib/x86_64-linux-gnu/libgssapi.so.3...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libgnutls.so.30...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libstdc++.so.6...(no debugging symbols found)...done.
+            Reading symbols from /lib/x86_64-linux-gnu/libgcc_s.so.1...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libicudata.so.55...(no debugging symbols found)...done.
+            Reading symbols from /lib/x86_64-linux-gnu/libselinux.so.1...(no debugging symbols found)...done.
+            Reading symbols from /lib/x86_64-linux-gnu/libgcrypt.so.20...(no debugging symbols found)...done.
+            Reading symbols from /lib/x86_64-linux-gnu/libkeyutils.so.1...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libheimntlm.so.0...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libkrb5.so.26...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libasn1.so.8...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libhcrypto.so.4...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libroken.so.18...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libp11-kit.so.0...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libidn.so.11...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libtasn1.so.6...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libnettle.so.6...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libhogweed.so.4...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libgmp.so.10...(no debugging symbols found)...done.
+            Reading symbols from /lib/x86_64-linux-gnu/libpcre.so.3...(no debugging symbols found)...done.
+            Reading symbols from /lib/x86_64-linux-gnu/libgpg-error.so.0...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libwind.so.0...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libheimbase.so.1...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libhx509.so.5...(no debugging symbols found)...done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libsqlite3.so.0...(no debugging symbols found)...done.
+            Reading symbols from /lib/x86_64-linux-gnu/libcrypt.so.1...Reading symbols from /usr/lib/debug//lib/x86_64-linux-gnu/libcrypt-2.23.so...done.
+            done.
+            Reading symbols from /usr/lib/x86_64-linux-gnu/libffi.so.6...(no debugging symbols found)...done.
+            Reading symbols from /lib/x86_64-linux-gnu/libnss_files.so.2...Reading symbols from /usr/lib/debug//lib/x86_64-linux-gnu/libnss_files-2.23.so...done.
+            done.
+            0x00007f7da43d35b3 in __select_nocancel () at ../sysdeps/unix/syscall-template.S:84
+            84      ../sysdeps/unix/syscall-template.S: Nie ma takiego pliku ani katalogu.
+            (gdb) bt
+            #0  0x00007f7da43d35b3 in __select_nocancel () at ../sysdeps/unix/syscall-template.S:84
+            #1  0x000055b80ce10e2c in ServerLoop () at /build/postgresql-10-0Kn02a/postgresql-10-10.12/build/../src/backend/postmaster/postmaster.c:1720
+            #2  0x000055b80d06b819 in PostmasterMain (argc=5, argv=<optimized out>) at /build/postgresql-10-0Kn02a/postgresql-10-10.12/build/../src/backend/postmaster/postmaster.c:1364
+            #3  0x000055b80ce12c75 in main (argc=5, argv=0x55b80ed5a850) at /build/postgresql-10-0Kn02a/postgresql-10-10.12/build/../src/backend/main/main.c:228
+            (gdb) bt
+            #0  0x00007f7da43d35b3 in __select_nocancel () at ../sysdeps/unix/syscall-template.S:84
+            #1  0x000055b80ce10e2c in ServerLoop () at /build/postgresql-10-0Kn02a/postgresql-10-10.12/build/../src/backend/postmaster/postmaster.c:1720
+            #2  0x000055b80d06b819 in PostmasterMain (argc=5, argv=<optimized out>) at /build/postgresql-10-0Kn02a/postgresql-10-10.12/build/../src/backend/postmaster/postmaster.c:1364
+            #3  0x000055b80ce12c75 in main (argc=5, argv=0x55b80ed5a850) at /build/postgresql-10-0Kn02a/postgresql-10-10.12/build/../src/backend/main/main.c:228
+            (gdb) c
+            Continuing.
+
+            server closed the connection unexpectedly
+                    This probably means the server terminated abnormally
+                    before or while processing the request.
+            connection to server was lost
+
+        ```
 
 
     OLDEST GDB:
